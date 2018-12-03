@@ -30,7 +30,7 @@ class RequestMatcher
      */
     public static function matchUrl(Request $first, Request $second)
     {
-        return $first->getPath() === $second->getPath();
+        return fnmatch($first->getPath(), $second->getPath());
     }
 
     /**
