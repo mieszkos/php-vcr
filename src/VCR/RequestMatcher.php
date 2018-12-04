@@ -30,7 +30,7 @@ class RequestMatcher
      */
     public static function matchUrl(Request $first, Request $second)
     {
-        return fnmatch($first->getPath(), $second->getPath());
+        return fnmatch($first->getUrl(), $second->getUrl());
     }
 
     /**
@@ -43,7 +43,7 @@ class RequestMatcher
      */
     public static function matchHost(Request $first, Request $second)
     {
-        return $first->getHost() === $second->getHost();
+        return fnmatch($first->getHost() === $second->getHost());
     }
 
     /**
